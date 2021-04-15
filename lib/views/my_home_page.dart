@@ -29,7 +29,27 @@ class MyHomePage extends StatelessWidget {
             ),
             FlatButton(onPressed: () {
               Get.off(AboutPage());
-            }, child: Text('About GetX'))
+            }, child: Text('About GetX')),
+            FlatButton(
+                onPressed: () {
+                  Get.snackbar('GetX Snackbar',
+                      'Yay! Awesome GetX Snackbar',
+                      snackPosition: SnackPosition.BOTTOM,
+                      backgroundColor: Colors.amberAccent
+                  );
+                },
+                child: Text('Show Snackbar')),
+            FlatButton(
+                onPressed: () {
+                  Get.defaultDialog(
+                    title: 'GetX Alert',
+                    middleText: 'Simple GetX Alert',
+                    textConfirm: 'Okay',
+                    confirmTextColor: Colors.amberAccent,
+                    textCancel: 'Cancel'
+                  );
+                },
+                child: Text('Show AlertDialog'))
           ],
         ),
       ),
